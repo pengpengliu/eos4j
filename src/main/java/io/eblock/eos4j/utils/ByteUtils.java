@@ -385,7 +385,7 @@ public class ByteUtils {
 		io.eblock.eos4j.utils.ByteBuffer bf = new io.eblock.eos4j.utils.ByteBuffer();
 // 		bf.concat(writerUnit32("1"));
 // 		bf.concat(writerVarint32("1"));
-// 		bf.concat(writerVarint32("0"));
+		bf.concat(writerVarint32("0"));
 		bf.concat(writerKeyStr(key));
 // 		bf.concat(writerUnit16("1"));
 // 		bf.concat(writerVarint32("0"));
