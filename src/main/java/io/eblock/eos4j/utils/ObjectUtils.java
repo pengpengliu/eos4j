@@ -93,7 +93,12 @@ public class ObjectUtils {
 				} else if ("from".equals(key)) {
 					bf.concat(ByteUtils.writeName(obj.toString()));
 				} else if ("to".equals(key)) {
-					bf.concat(ByteUtils.writeName(obj.toString()));
+					// 兼容ABBC
+					if (obj.toString().matches("^[a-km-zA-HJ-NP-Z1-9]{50}$")) {
+						bf.concat(ByteUtils.writerKey(obj.toString()));
+					} else {
+						bf.concat(ByteUtils.writeName(obj.toString()));
+					}
 				} else if ("quantity".equals(key)) {
 					bf.concat(ByteUtils.writerAsset(obj.toString()));
 				} else if ("memo".equals(key)) {
