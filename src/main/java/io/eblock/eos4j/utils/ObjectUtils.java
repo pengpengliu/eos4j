@@ -131,6 +131,8 @@ public class ObjectUtils {
 					bf.concat(ByteUtils.writeName(obj.toString()));
 				}else if ("close-symbol".equals(key)) {
 					bf.concat(ByteUtils.writerSymbol(obj.toString()));
+				} else if ("bcreate".equals(key)) {
+					bf.concat(new byte[] { 1 });
 				}
 			}
 		}
