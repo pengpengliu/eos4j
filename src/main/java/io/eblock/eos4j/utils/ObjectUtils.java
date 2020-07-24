@@ -131,8 +131,20 @@ public class ObjectUtils {
 					bf.concat(ByteUtils.writeName(obj.toString()));
 				}else if ("close-symbol".equals(key)) {
 					bf.concat(ByteUtils.writerSymbol(obj.toString()));
-				} else if ("bcreate".equals(key)) {
+				} else if ("bcreate".equals(key)) {	// YTA
 					bf.concat(new byte[] { 1 });
+				} 
+				// FIO
+				else if ("payee_public_key".equals(key)) {
+					bf.concat(ByteUtils.writerString(obj.toString()));
+				} else if ("amount".equals(key)) {
+					bf.concat(ByteUtils.writerUnit64(obj.toString()));
+				} else if ("max_fee".equals(key)) {
+					bf.concat(ByteUtils.writerUnit64(obj.toString()));
+				} else if ("actor".equals(key)) {
+					bf.concat(ByteUtils.writeName(obj.toString()));
+				} else if ("tpid".equals(key)) {
+					bf.concat(ByteUtils.writerString(obj.toString()));
 				}
 			}
 		}

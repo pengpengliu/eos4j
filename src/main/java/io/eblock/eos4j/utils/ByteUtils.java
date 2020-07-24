@@ -122,6 +122,22 @@ public class ByteUtils {
 	}
 
 	/**
+	 * writerUnit64
+	 * 
+	 * @param value
+	 * @return
+	 */
+	public static byte[] writerUnit64(String value) {
+		long vl = Long.parseLong(value);
+		return new byte[] {
+			 (byte) (vl & 0x000000FF), 
+			 (byte) ((vl & 0x0000FF00) >>> 8),
+			 (byte) ((vl & 0x00FF0000) >>> 16),
+			 (byte) ((vl & 0xFF000000) >>> 64)
+			};
+	}
+
+	/**
 	 * writerUnit16
 	 * 
 	 * @param value
